@@ -13,7 +13,10 @@
     </head>
     <body>
     <center>
+        <h1>Tasa de Metabolismo Basal (TMB)</h1>
         
+        <h3>TMB: </h3>
+        <h3>Requerimiento de Kilocalorías diarias: </h3>
     </center>
     </body>
 </html>
