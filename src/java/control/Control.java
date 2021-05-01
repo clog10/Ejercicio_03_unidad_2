@@ -29,20 +29,15 @@ public class Control extends HttpServlet {
             //vinculo a la pagina a donde se dirigira la respuesta
             RequestDispatcher acceder = request.getRequestDispatcher("");
             String nombre = request.getParameter("usuario");
-//            if (nombre == null || nombre.isEmpty()) {
-//                nombre = "anonimo";
-//            }
             String pass = request.getParameter("password");
-            
-            if(pass==null || pass.isEmpty()){
+
+            if (pass == null || pass.isEmpty() || nombre == null || nombre.isEmpty()) {
                 acceder = request.getRequestDispatcher("index.jsp");
             }
-            if(usuarios.autenticar(nombre, pass)){
+            if (usuarios.autenticar(nombre, pass)) {
                 dato.setNombre(nombre);
                 acceder = request.getRequestDispatcher("acceso_2.jsp");
             }
-            //dato.setNombre(nombre);
-            //request.setAttribute("usuario",nombre);
             request.setAttribute("dato", dato);
             //redireccionamiento a la pagina
             acceder.forward(request, response);

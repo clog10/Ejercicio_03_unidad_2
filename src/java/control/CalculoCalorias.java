@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CalculoCalorias", urlPatterns = {"/CalculoCalorias"})
 public class CalculoCalorias extends HttpServlet {
     private Actividad actividad = new Actividad();
-
+    private Usuario user;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
@@ -31,15 +31,18 @@ public class CalculoCalorias extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher calculo = request.getRequestDispatcher("calculokilocalorias.jsp");
+            String nombre = request.getParameter("nombre");
             String s = request.getParameter("sexo");
             char sexo = s.charAt(0);
             int edad = Integer.parseInt(request.getParameter("edad"));
             int estatura = Integer.parseInt(request.getParameter("estatura"));
             double peso = Double.parseDouble(request.getParameter("peso"));
             int acti = Integer.parseInt(request.getParameter("actividad"));
-
-            actividad.calculaTmb(peso, estatura, edad, sexo);
-            actividad.calculaKcalorias(actividad.getTmb(), sexo, acti);
+            user=new Usuario(nombre,sexo,edad,peso,estatura,acti);
+            actividad.calculaTmb(user);
+            actividad.calculaKcalorias(actividad.getTmb(), user);
+            request.setAttribute("acti",acti);
+            request.setAttribute("usuario", user);
             request.setAttribute("actividad",actividad);
             calculo.forward(request, response);
     }

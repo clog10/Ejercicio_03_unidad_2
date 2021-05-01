@@ -21,16 +21,16 @@ public class Actividad {
 
     private double tmb;
     private double kcalorias;
-
+    
     public double getTmb() {
         return tmb;
     }
 
-    public void calculaTmb(double peso, int estatura, int edad, char sexo) {
-        if (sexo == 'H') {
-            this.tmb = (10 * peso) + (6.25 * estatura) - (5 * edad) + 5;
-        } else if (sexo == 'M') {
-            this.tmb = (10 * peso) + (6.25 * estatura) - (5 * edad) - 161;
+    public void calculaTmb(Usuario user) {
+        if (user.getSexo() == 'H') {
+            this.tmb = (10 * user.getPeso()) + (6.25 * user.getEstatura()) - (5 * user.getEdad()) + 5;
+        } else if (user.getSexo() == 'M') {
+            this.tmb = (10 * user.getPeso()) + (6.25 * user.getEstatura()) - (5 * user.getEdad()) - 161;
         }
     }
 
@@ -38,22 +38,22 @@ public class Actividad {
         return kcalorias;
     }
 
-    public void calculaKcalorias(double TMB, char sexo, int actividad) {
-        if (sexo == 'H' && actividad == 0) {
+    public void calculaKcalorias(double TMB, Usuario user) {
+        if (user.getSexo() == 'H' && user.getActividad() == 0) {
             this.kcalorias = TMB * h_sedentario;
-        } else if (sexo == 'H' && actividad == 1) {
+        } else if (user.getSexo() == 'H' && user.getActividad() == 1) {
             this.kcalorias = TMB * h_ligeramente;
-        } else if (sexo == 'H' && actividad == 2) {
+        } else if (user.getSexo() == 'H' && user.getActividad() == 2) {
             this.kcalorias = TMB * h_moderadamente;
-        } else if (sexo == 'H' && actividad == 3) {
+        } else if (user.getSexo() == 'H' && user.getActividad() == 3) {
             this.kcalorias = TMB * h_muyactivo;
-        } else if (sexo == 'M' && actividad == 0) {
+        } else if (user.getSexo() == 'M' && user.getActividad() == 0) {
             this.kcalorias = TMB * m_sedentaria;
-        } else if (sexo == 'M' && actividad == 1) {
+        } else if (user.getSexo() == 'M' && user.getActividad() == 1) {
             this.kcalorias = TMB * m_ligeramente;
-        } else if (sexo == 'M' && actividad == 2) {
+        } else if (user.getSexo() == 'M' && user.getActividad() == 2) {
             this.kcalorias = TMB * m_moderadamente;
-        } else if (sexo == 'M' && actividad == 3) {
+        } else if (user.getSexo() == 'M' && user.getActividad() == 3) {
             this.kcalorias = TMB * m_muyactiva;
         }
     }

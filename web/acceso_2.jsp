@@ -22,7 +22,9 @@
                 <tbody>
                     <tr>
                         <td align="right">Nombre: </td>
-                        <td>${dato.getNombre()}</td>
+                        <td>
+                            <input type="text" name="nombre" value="${dato.getNombre()}" readonly="" style="border: 0;">
+                        </td>
                     </tr>
                     <tr>
                         <td align="right">Sexo: </td>
@@ -34,19 +36,19 @@
                     <tr>
                         <td align="right">Edad: </td>
                         <td>
-                            <input type="text" name="edad" required>
+                            <input type="number" name="edad" required min="19" max="130">
                         </td>
                     </tr>
                     <tr>
                         <td align="right">Estatura (en cm): </td>
                         <td>
-                            <input type="text" name="estatura" required>
+                            <input type="number" name="estatura" required min="140" max="200">
                         </td>
                     </tr>
                     <tr>
                         <td align="right">Peso (en kg): </td>
                         <td>
-                            <input type="text" name="peso" required>
+                            <input type="number" name="peso" required min="45" max="120">
                         </td>
                     </tr>
                     <tr>

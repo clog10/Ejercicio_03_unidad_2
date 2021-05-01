@@ -13,6 +13,18 @@ public class Usuario {
     private int estatura;
     private int actividad;
 
+    public Usuario() {
+    }
+
+    public Usuario(String nombre, char sexo, int edad, double peso, int estatura, int actividad) {
+        this.nombre = nombre;
+        this.sexo = sexo;
+        this.edad = edad;
+        this.peso = peso;
+        this.estatura = estatura;
+        this.actividad = actividad;
+    }
+    
     public String getNombre() {
         return nombre;
     }
