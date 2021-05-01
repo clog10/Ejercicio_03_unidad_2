@@ -11,6 +11,7 @@ public class Usuario {
     private int edad;
     private double peso;
     private int estatura;
+    private int actividad;
 
     public String getNombre() {
         return nombre;
@@ -51,5 +52,13 @@ public class Usuario {
     public void setEstatura(int estatura) {
         this.estatura = estatura;
     }
+
+    public int getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(int actividad) {
+        this.actividad = actividad;
+    } 
     
 }

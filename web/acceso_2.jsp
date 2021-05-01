@@ -14,7 +14,7 @@
     <body>
     <center>
         <h1>Bienvenido al sistema 2</h1>
-        <form name="calculo" action="CalculoCalorias" method="post">
+        <form name="calculo" action="CalculoCalorias" method="get">
             <table>
                 <thead>
                 <th colspan="2" align="center">Datos del Usuario</th>
@@ -34,19 +34,19 @@
                     <tr>
                         <td align="right">Edad: </td>
                         <td>
-                            <input type="text" name="edad">
+                            <input type="text" name="edad" required>
                         </td>
                     </tr>
                     <tr>
                         <td align="right">Estatura (en cm): </td>
                         <td>
-                            <input type="text" name="estatura">
+                            <input type="text" name="estatura" required>
                         </td>
                     </tr>
                     <tr>
                         <td align="right">Peso (en kg): </td>
                         <td>
-                            <input type="text" name="peso">
+                            <input type="text" name="peso" required>
                         </td>
                     </tr>
                     <tr>

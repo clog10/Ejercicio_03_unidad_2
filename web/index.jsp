@@ -21,11 +21,11 @@
                 <tbody>
                     <tr>
                         <td>Usuario: </td>
-                        <td><input type="text" name="usuario" value=""></td>
+                        <td><input type="text" name="usuario"></td>
                     </tr>
                      <tr>
                         <td>Contraseña: </td>
-                        <td><input type="password" name="password" value=""></td>
+                        <td><input type="password" name="password"></td>
                     </tr>
                      <tr>
                         <td><input type="submit" value="Acceder" ></td>

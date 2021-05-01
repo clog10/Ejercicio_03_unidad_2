@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,8 +15,8 @@
     <center>
         <h1>Tasa de Metabolismo Basal (TMB)</h1>
         
-        <h3>TMB: </h3>
-        <h3>Requerimiento de Kilocalorías diarias: </h3>
+        <h3>TMB: ${actividad.getTmb()}</h3>
+        <h3>Requerimiento de Kilocalorías diarias: ${actividad.getKcalorias()}</h3>
     </center>
     </body>
 </html>

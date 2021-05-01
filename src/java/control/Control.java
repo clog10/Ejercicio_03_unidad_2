@@ -24,7 +24,6 @@ public class Control extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (
                 PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             //vinculo a la pagina a donde se dirigira la respuesta
             RequestDispatcher acceder = request.getRequestDispatcher("acceso_2.jsp");
             String nombre = request.getParameter("usuario");
