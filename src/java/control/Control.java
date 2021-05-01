@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import datos.Usuario;
+import datos.Usuarios;
 
 /**
  *
@@ -18,6 +19,7 @@ import datos.Usuario;
 public class Control extends HttpServlet {
 
     private Usuario dato = new Usuario();
+    private Usuarios usuarios = new Usuarios();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -25,12 +27,21 @@ public class Control extends HttpServlet {
         try (
                 PrintWriter out = response.getWriter()) {
             //vinculo a la pagina a donde se dirigira la respuesta
-            RequestDispatcher acceder = request.getRequestDispatcher("acceso_2.jsp");
+            RequestDispatcher acceder = request.getRequestDispatcher("");
             String nombre = request.getParameter("usuario");
-            if (nombre == null || nombre.isEmpty()) {
-                nombre = "anonimo";
+//            if (nombre == null || nombre.isEmpty()) {
+//                nombre = "anonimo";
+//            }
+            String pass = request.getParameter("password");
+            
+            if(pass==null || pass.isEmpty()){
+                acceder = request.getRequestDispatcher("index.jsp");
             }
-            dato.setNombre(nombre);
+            if(usuarios.autenticar(nombre, pass)){
+                dato.setNombre(nombre);
+                acceder = request.getRequestDispatcher("acceso_2.jsp");
+            }
+            //dato.setNombre(nombre);
             //request.setAttribute("usuario",nombre);
             request.setAttribute("dato", dato);
             //redireccionamiento a la pagina
