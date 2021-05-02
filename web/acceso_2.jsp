@@ -14,7 +14,7 @@
     <body>
     <center>
         <h1>Bienvenido al sistema 2</h1>
-        <form name="calculo" action="CalculoCalorias" method="get">
+        <form name="calculo" action="calculokilocalorias_2.jsp" method="get">
             <table>
                 <thead>
                 <th colspan="2" align="center">Datos del Usuario</th>
@@ -60,7 +60,7 @@
                                 <option value="2">Moderadamente activo (realiza de 3-5 veces por semana)</option>
                                 <option value="3">Muy Activo (realiza de 6-7 veces por semana)</option>
                             </select>
-                        </td>
+                        </td> 
                     </tr>
                     <tr>
                         <td colspan="2" align="center"><input type="submit" value="Calcular" ></td>
