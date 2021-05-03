@@ -19,6 +19,23 @@
   double peso = Double.parseDouble(request.getParameter("peso"));
   int acti = Integer.parseInt(request.getParameter("actividad"));
   
+  String a = "";
+
+    switch (acti) {
+        case 0:
+            a = "Sedentario (no realiza)";
+            break;
+        case 1:
+            a = "Ligeramente Activo (realiza de 1-3 veces por semana)";
+            break;
+        case 2:
+            a = "Moderadamente activo (realiza de 3-5 veces por semana)";
+            break;
+        case 3:
+            a = "Muy Activo (realiza de 6-7 veces por semana)";
+            break;
+    }
+  
             usuario=new Usuario(nombre,sexo,edad,peso,estatura,acti);
             actividad.calculaTmb(usuario);
             actividad.calculaKcalorias(actividad.getTmb(), usuario);
@@ -35,7 +52,7 @@
         <h1>Tasa de Metabolismo Basal (TMB)</h1>
         <h2>Datos del usuario</h2>
         <h2>Nombre: <%= nombre%></h2>
-        <h3>Sexo: <%=sexo%>, Edad:<%=edad%> años, Peso: <%=peso%> Kg, Estatura: <%=estatura%> cm, Actividad Física: <%= acti%></h3> 
+        <h3>Sexo: <%=sexo%>, Edad:<%=edad%> años, Peso: <%=peso%> Kg, Estatura: <%=estatura%> cm, Actividad Física: <%= a%></h3> 
         <h2>Resultados</h2>
         <h3>TMB: <%=actividad.getTmb()%></h3>
         <h3>Requerimiento de Kilocalorías diarias: <%=actividad.getKcalorias()%></h3>

@@ -14,7 +14,10 @@
     <body>
     <center>
         <h1>Bienvenido al sistema 2</h1>
-        <form name="calculo" action="calculokilocalorias_2.jsp" method="get">
+        <!-- Para enviar directamente a la vista  -->
+        <!--<form name="calculo" action="calculokilocalorias_2.jsp" method="get">-->
+        <!-- Para enviar a un controlador -->
+        <form name="calculo" action="CalculoCalorias" method="get">
             <table>
                 <thead>
                 <th colspan="2" align="center">Datos del Usuario</th>

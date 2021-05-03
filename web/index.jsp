@@ -16,7 +16,7 @@
         <form name="acceso" action="Control" method="post">
             <table>
                 <thead>
-                <th>Acceso</th>
+                <th colspan="2" align="center"><h1>Acceso</h1></th>
                 </thead>
                 <tbody>
                     <tr>
@@ -28,7 +28,7 @@
                         <td><input type="password" name="password" required></td>
                     </tr>
                      <tr>
-                        <td><input type="submit" value="Acceder" ></td>
+                        <td colspan="2" align="center"><input type="submit" value="Acceder" ></td>
                     </tr>
                 </tbody>
             </table>
