@@ -5,6 +5,29 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+            //Al hacer click en el botón ingresar
+            if (request.getParameter("btn_ingresar") != null) 
+            {
+                //Crea dos strings, una para el user y otra para el password.
+                String username = request.getParameter("txt_username");
+                String password = request.getParameter("txt_password");
+                
+                //Si ambas son "admin"...
+                if (username.equals("admin")&&password.equals("admin"))
+                {
+                    //Redirecciona al servlet 'crear_departamento.do'
+                    response.sendRedirect("crear_departamento.do");
+                }
+                //Si no...
+                else
+                {
+                    //Muestra un mensaje javascript señalando que hay daros erróneos
+                    out.println("<script>alert('Usuario o contraseña incorrecta');</script>");
+                }
+            }
+        %>
+
 <!DOCTYPE html>
 <html>
     <head>
